@@ -1,25 +1,29 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { getCharacter } from "./redux/action";
-import Card from "./Card";
+import { getCharacter } from "../../redux/action";
+import Card from "../Card/Card";
 
 const CardsWraper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+display:flex;
+margin-top:60px;
+flex-direction: row;
+justify-content: space-around;
+flex-wrap: wrap;
 `;
 
 class Cards extends Component {
+
   componentDidMount() {
-    this.props.getCharacter();
+    if (this.props.character.length === 0) {
+      this.props.getCharacter();
+    }
   }
 
   render() {
     return (
       <CardsWraper>
-        {this.props.character.map((character) => (
+       {this.props.character.map((character) => (
           <Card
             key={character.id}
             name={character.name}

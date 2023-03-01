@@ -1,7 +1,10 @@
 export const GET_CHARACTER = "GET_CHARACTER";
 export const ADD_CHARACTER = "ADD_CHARACTER";
 export const DELETE_CHARACTER = "DELETE_CHARACTER";
-export const GET_DETAIL = "GET_DETAIL"
+export const GET_DETAIL = "GET_DETAIL";
+export const ADD_FAVORITE = "ADD_FAVORITE";
+export const DELETE_FAVORITE = "DELETE_FAVORITE";
+export const FILTER_CHARACTER = "FILTER_CHARACTER";
 
 export function getCharacter() {
   return function (dispatch) {
@@ -32,4 +35,21 @@ export function getDetail(id){
       .then((data) => dispatch({ type: GET_DETAIL, payload: data}));
   };
 
+
+}
+
+export function addFavorite(data){
+  return{
+    type:ADD_FAVORITE,payload:data
+  }
+}
+export function deleteFavorite(id){
+  return{
+    type:DELETE_FAVORITE,payload:id
+  }
+}
+
+export function filterCards(genero){
+
+  return {type:FILTER_CHARACTER,payload:genero}
 }

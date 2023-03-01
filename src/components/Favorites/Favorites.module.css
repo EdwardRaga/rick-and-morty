@@ -1,0 +1,14 @@
+.wrapper{
+    
+    display: flex;
+    margin-top:60px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.filter{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}

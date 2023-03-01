@@ -1,4 +1,11 @@
-body {
-  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-  margin:5px;
+
+.root{
+  min-height: 100vh;
+  padding: 20px;
+  background-image: url('./img/rick-y-morty-app.png');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  overflow:hidden;
 }
+

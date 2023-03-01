@@ -1,0 +1,18 @@
+.wrapper{
+    padding: 40px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-image: url('../../img/rick-y-morty-paisaje-6534.webp');
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    
+}
+.linkNav{
+background-color: rgba(245, 245, 245, 0.1);
+border-radius: 5px;
+margin: 50px;
+display:flex;
+justify-content:space-between;
+
+}

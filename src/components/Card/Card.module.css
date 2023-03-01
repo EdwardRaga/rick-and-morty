@@ -1,0 +1,6 @@
+.wraperButton{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+    margin: 10px;
+}

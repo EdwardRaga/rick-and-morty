@@ -5,6 +5,7 @@ export const GET_DETAIL = "GET_DETAIL";
 export const ADD_FAVORITE = "ADD_FAVORITE";
 export const DELETE_FAVORITE = "DELETE_FAVORITE";
 export const FILTER_CHARACTER = "FILTER_CHARACTER";
+export const ORDER_ASCENDING = "ORDER_ASCENDING";
 
 export function getCharacter() {
   return function (dispatch) {
@@ -52,4 +53,10 @@ export function deleteFavorite(id){
 export function filterCards(genero){
 
   return {type:FILTER_CHARACTER,payload:genero}
+}
+
+export function orderAscending(typeOrder){
+  return{
+    type:ORDER_ASCENDING, payload:typeOrder
+  }
 }

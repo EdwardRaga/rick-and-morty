@@ -7,6 +7,8 @@ const {app} = require('./app')
 
 const PORT = process.env.PORT || 3001;
 
+
+
 //acceso a los recursos del server
 // const corsOptions = {
 //     origin: 'http://localhost:3000',
@@ -26,7 +28,7 @@ const PORT = process.env.PORT || 3001;
 
 
 app.listen(PORT,()=>{
-    console.log("SERVER ON", PORT);
+    console.log("SERVER ON",PORT);
 })
 //***************************************************************************
 

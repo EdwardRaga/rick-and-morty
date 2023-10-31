@@ -5,7 +5,7 @@ const URL = "https://rickandmortyapi.com/api/character/";
 async function getCharDetail(req,res){
   
   try{
-    //id params
+        //id params
     const params = req.params.id;
     //request a la ruta de la api RaM
      const request = await fetch(`${URL}${params}`);

@@ -21,25 +21,25 @@ class NavBar extends React.Component {
     return (
       <div className={styledNav.wrapper}>
         <div className={styledNav.linkNav}>
-        <div>
-        <Link to="/">
-            <NavButton>Log out</NavButton>
-          </Link>
-        </div>
-     <div>
-     <Link to="/home">
-            <NavButton>Home</NavButton>
-          </Link>
-          <Link to="/favorites">
-            <NavButton>Favorites</NavButton>
-          </Link>
-          <Link to="/form">
-            <NavButton>Add character</NavButton>
-          </Link>
-          <Link to="/about">
-            <NavButton>About</NavButton>
-          </Link>
-     </div>
+          <div>
+            <Link to="/">
+              <NavButton>Log out</NavButton>
+            </Link>
+          </div>
+          <div>
+            <Link to="/home">
+              <NavButton>Home</NavButton>
+            </Link>
+            <Link to="/favorites">
+              <NavButton>Favorites</NavButton>
+            </Link>
+            <Link to="/form">
+              <NavButton>Add character</NavButton>
+            </Link>
+            <Link to="/about">
+              <NavButton>About</NavButton>
+            </Link>
+          </div>
         </div>
       </div>
     );

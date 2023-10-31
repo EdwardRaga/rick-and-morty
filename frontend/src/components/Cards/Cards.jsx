@@ -5,15 +5,14 @@ import { getCharacter } from "../../redux/action";
 import Card from "../Card/Card";
 
 const CardsWraper = styled.div`
-display:flex;
-margin-top:60px;
-flex-direction: row;
-justify-content: space-around;
-flex-wrap: wrap;
+  display: flex;
+  margin-top: 60px;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 `;
 
 class Cards extends Component {
-
   componentDidMount() {
     if (this.props.character.length === 0) {
       this.props.getCharacter();
@@ -23,7 +22,7 @@ class Cards extends Component {
   render() {
     return (
       <CardsWraper>
-       {this.props.character.map((character) => (
+        {this.props.character.map((character) => (
           <Card
             key={character.id}
             name={character.name}

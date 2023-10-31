@@ -12,7 +12,7 @@ import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 
 function App() {
   //datos estaticos login
-  const USERNAME = 'edwardraga@icloud.com';
+  const USERNAME = 'mail@test.com';
   const PASSWORD   = '123456' 
   
   //estado que de bandera roja login
@@ -21,9 +21,7 @@ function App() {
   const location = useLocation();
   
   const login = (userData)=>{
-    console.log('funcion login');
     if(userData.username === USERNAME && userData.password === PASSWORD){
-      console.log('funcion login');
       setAccess(true);
       navigate('/home');
     }
@@ -38,7 +36,9 @@ function App() {
   <div className="root">
     {location.pathname === '/' ? (
       // Si la ruta actual es '/', muestra este contenido
+      <>
       <Login login={login} />
+      </>
     ) : (
       // Si la ruta actual es diferente a '/', muestra este contenido
       <>

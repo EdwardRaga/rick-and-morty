@@ -43,14 +43,13 @@ const CardImage = styled.img`
 const NavButton = styled.button`
   font-size: 20px;
   border: none;
-  border-radius:3px;
+  border-radius: 3px;
   background-color: rgba(0, 0, 0, 0.1);
 
- &:hover {
-  cursor:pointer;
+  &:hover {
+    cursor: pointer;
   }
-
-  `;
+`;
 
 const Card = ({
   name,
@@ -86,7 +85,7 @@ const Card = ({
       name,
       image,
       id,
-      gender
+      gender,
     });
   };
 

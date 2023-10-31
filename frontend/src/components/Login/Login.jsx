@@ -12,7 +12,6 @@ export default function Login({ login }) {
   let [errors, setErrors] = React.useState();
 
   let location = useLocation();
-  console.log(location);
 
   const handleInputChange = (event) => {
     setErrors(
@@ -38,7 +37,8 @@ export default function Login({ login }) {
       <div className={styledLogin.container}>
         <form className={styledLogin.form} onSubmit={handleSubmit}>
           <label>Username</label>
-          <input className={styledLogin.input}
+          <input
+            className={styledLogin.input}
             onChange={(event) => {
               handleInputChange(event);
             }}
@@ -47,9 +47,11 @@ export default function Login({ login }) {
             type="text"
             placeholder="Email"
           />
+          <p>mail@test.com</p>
           <p>{errors && errors.username}</p>
           <label>Password</label>
-          <input className={styledLogin.input}
+          <input
+            className={styledLogin.input}
             onChange={(event) => {
               handleInputChange(event);
             }}
@@ -58,8 +60,11 @@ export default function Login({ login }) {
             type="password"
             placeholder="Contraseña"
           />
+          <p>123456</p>
           <p>{errors && errors.password}</p>
-          <button className={styledLogin.input} type="submit">Log In</button>
+          <button className={styledLogin.input} type="submit">
+            Log In
+          </button>
         </form>
       </div>
     </div>

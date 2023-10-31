@@ -17,7 +17,6 @@ const initalState = {
 };
 
 function rooReducer(state = initalState, actions) {
-  console.log(actions.payload);
   switch (actions.type) {
     case GET_CHARACTER:
       return {

@@ -49,13 +49,13 @@ border-radius: 5px;
 `;
 
 const Error = styled.p`
-  margin-top:20px;
-  color: #BB2124;
+  margin-top: 20px;
+  color: #bb2124;
 `;
 const Sucess = styled.p`
   margin-top: 20px;
-  padding:px;
-  color: #22BB33;
+  padding: px;
+  color: #22bb33;
 `;
 
 function Form({ add, get, detail, character }) {
@@ -73,7 +73,7 @@ function Form({ add, get, detail, character }) {
     id: "",
   });
 
-  const [sucess,setSucess] = useState({sucess:''})
+  const [sucess, setSucess] = useState({ sucess: "" });
   //--------------------
 
   useEffect(() => {
@@ -92,7 +92,7 @@ function Form({ add, get, detail, character }) {
       image: detail.image || "",
     });
   }, [detail]);
-  
+
   //-------------------------------
 
   const handleChange = (event) => {
@@ -101,12 +101,10 @@ function Form({ add, get, detail, character }) {
     const value = event.target.value;
     let verifation = character.filter((ele) => ele.id == value);
 
-    setSucess({...sucess,
-      sucess:''})
+    setSucess({ ...sucess, sucess: "" });
 
     if (!value.length) {
       setError({ id: "please enter a id" });
-         
     } else if (value <= 0) {
       setError({ id: "please enter a number greater than 0" });
     } else if (value >= 827) {
@@ -118,7 +116,7 @@ function Form({ add, get, detail, character }) {
           : setError({ id: "" });
       }
     }
-    if(value > 0){
+    if (value > 0) {
       setInput({
         ...input,
         [target]: value,
@@ -127,41 +125,29 @@ function Form({ add, get, detail, character }) {
   };
 
   const handleSubmit = (event) => {
-    
     event.preventDefault();
     const value = event.target.id.value;
 
-
-    if(!value.length){
-      console.log('No se puede');
+    if (!value.length) {
       setError({
-        id: 'please enter a id'
-      })
+        id: "please enter a id",
+      });
+    } else if (!error.id) {
+      add(input);
+      setInput({
+        ...input,
+        id: "",
+        name: "",
+        status: "",
+        species: "",
+        gender: "",
+        image: "",
+      });
+
+      setError({ id: "Do you want add new character?" });
+      setSucess({ ...sucess, sucess: "The character was added successfully" });
     }
-    
-    else if(!error.id){
-      
-      console.log('Se agrego');
-      console.log(input);
-      
-        
-        add(input);
-        setInput({
-          ...input,
-          id: "",
-          name: "",
-          status: "",
-          species: "",
-          gender: "",
-          image: "",
-        })
-  
-        setError({ id: "Do you want add new character?" })
-        setSucess({...sucess,
-          sucess:'The character was added successfully'})
-      }
-    }
-  
+  };
 
   return (
     <FormWrapper onSubmit={handleSubmit}>
@@ -229,7 +215,6 @@ function Form({ add, get, detail, character }) {
 
       {!error.id ? <SingButton type="submit">Add Character</SingButton> : null}
       {sucess.sucess && <Sucess>{sucess.sucess}</Sucess>}
-      
     </FormWrapper>
   );
 }

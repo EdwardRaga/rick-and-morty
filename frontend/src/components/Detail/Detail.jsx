@@ -7,10 +7,10 @@ import styled from "styled-components";
 
 /* The above code is using styled-components to style the components. */
 const DivWrapper = styled.div`
-  display:flex;
+  display: flex;
   justify-content: center;
-  margin-top:px;
-  padding-bottom:100px;
+  margin-top: px;
+  padding-bottom: 100px;
 `;
 
 const CardWrapper = styled.div`
@@ -32,11 +32,11 @@ const TableContainer = styled.table`
   width: 100%;
   border-collapse: collapse;
   margin: 10px auto;
-  boder-radius:5px;
+  boder-radius: 5px;
 `;
 
 const TableHeader = styled.th`
-  background-color: #3E3180;
+  background-color: #3e3180;
   color: #fff;
   font-weight: normal;
   padding: 10px;
@@ -49,14 +49,13 @@ const TableData = styled.td`
 `;
 
 const Section = styled.div`
-display:flex;
-align-items:center;
-justify-content:center;
-color:#f5f5f5;
-line-height:30px;
-text-align:justify;
-
-`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5f5f5;
+  line-height: 30px;
+  text-align: justify;
+`;
 
 /**
  * It's a function that takes in a detail and a state, and returns a div that contains a card that
@@ -67,51 +66,63 @@ function Detail({ detail, state }) {
   const { id } = useParams();
 
   useEffect(() => {
-    console.log(id);
     detail(id);
-  }, [id,state.detail]);
-  
+  }, [id, state.detail]);
 
   return (
     <DivWrapper>
       <CardWrapper>
-         
-          {state.name &&
+        {state.name && (
           <TableContainer>
-          <thead>
-            <tr>
-              <TableHeader>Character</TableHeader>
-              <TableHeader>Location</TableHeader>
-              <TableHeader>Status</TableHeader>
-              <TableHeader>Specie</TableHeader>
-              <TableHeader>Gender</TableHeader>
-              <TableHeader>Origin</TableHeader>
-              <TableHeader>Type</TableHeader>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <TableData>{state.name}</TableData>
-              <TableData>{state.location.name}</TableData>
-              <TableData>{state.status}</TableData>
-              <TableData>{state.species}</TableData>
-              <TableData>{state.gender}</TableData>
-              <TableData>{state.origin.name}</TableData>
-              <TableData>{state.type}</TableData>
-            </tr>
+            <thead>
+              <tr>
+                <TableHeader>Character</TableHeader>
+                <TableHeader>Location</TableHeader>
+                <TableHeader>Status</TableHeader>
+                <TableHeader>Specie</TableHeader>
+                <TableHeader>Gender</TableHeader>
+                <TableHeader>Origin</TableHeader>
+                <TableHeader>Type</TableHeader>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <TableData>{state.name}</TableData>
+                <TableData>{state.location.name}</TableData>
+                <TableData>{state.status}</TableData>
+                <TableData>{state.species}</TableData>
+                <TableData>{state.gender}</TableData>
+                <TableData>{state.origin.name}</TableData>
+                <TableData>{state.type}</TableData>
+              </tr>
 
-            {/* Agrega más filas según sea necesario */}
-          </tbody>
-        </TableContainer>}
+              {/* Agrega más filas según sea necesario */}
+            </tbody>
+          </TableContainer>
+        )}
         <Section>
-        <CardImage src={state.image} alt={state.image} />
-        <section>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus sit tempore laborum sed exercitationem enim minus maiores voluptate! Explicabo totam unde blanditiis delectus error? Quia veritatis vero ratione tempora voluptatem.
-          Ipsam, harum. Veniam delectus est neque, blanditiis autem explicabo temporibus alias maiores placeat dolores aliquam dolor distinctio omnis quae nobis tempore corporis odio exercitationem dolorum eos sunt animi hic. Eveniet.
-          Quas quaerat accusantium quis provident ullam culpa consequuntur suscipit tenetur. Nihil eum delectus assumenda rerum iste quibusdam at necessitatibus iusto praesentium. Voluptate, at cumque nobis quos nesciunt est accusamus expedita?
-          Repudiandae, aliquid quae? Ea rem nostrum, cumque eos beatae quidem aperiam culpa voluptatem illo obcaecati dolorum quas provident, maxime placeat repellat aspernatur! Consectetur tempore harum eligendi, quia sit voluptatibus sint?
-          Molestiae suscipit placeat vel. Excepturi repudiandae eius enim beatae aliquid aut dolor quasi ex saepe impedit officiis dignissimos corporis sapiente voluptates labore adipisci, dolorum ipsum nemo quaerat ad pariatur atque.
-          </p>
+          <CardImage src={state.image} alt={state.image} />
+          <section>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus
+              sit tempore laborum sed exercitationem enim minus maiores
+              voluptate! Explicabo totam unde blanditiis delectus error? Quia
+              veritatis vero ratione tempora voluptatem. Ipsam, harum. Veniam
+              delectus est neque, blanditiis autem explicabo temporibus alias
+              maiores placeat dolores aliquam dolor distinctio omnis quae nobis
+              tempore corporis odio exercitationem dolorum eos sunt animi hic.
+              Eveniet. Quas quaerat accusantium quis provident ullam culpa
+              consequuntur suscipit tenetur. Nihil eum delectus assumenda rerum
+              iste quibusdam at necessitatibus iusto praesentium. Voluptate, at
+              cumque nobis quos nesciunt est accusamus expedita? Repudiandae,
+              aliquid quae? Ea rem nostrum, cumque eos beatae quidem aperiam
+              culpa voluptatem illo obcaecati dolorum quas provident, maxime
+              placeat repellat aspernatur! Consectetur tempore harum eligendi,
+              quia sit voluptatibus sint? Molestiae suscipit placeat vel.
+              Excepturi repudiandae eius enim beatae aliquid aut dolor quasi ex
+              saepe impedit officiis dignissimos corporis sapiente voluptates
+              labore adipisci, dolorum ipsum nemo quaerat ad pariatur atque.
+            </p>
           </section>
         </Section>
       </CardWrapper>

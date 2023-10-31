@@ -13,7 +13,7 @@ const deleteFav = require("../controllers/deleteFav");
 //Get al characters and favorites
 router.get("/rickandmorty/characters", async(req,res) => {
     try {
-       const response = await  fetch(`  https://rickandmortyapi.com/api/character`);
+       const response = await  fetch(`https://rickandmortyapi.com/api/character`);
        const characters = await response.json()
         res.status(200).json({characters, favs});
     }catch(e){
